@@ -2,7 +2,7 @@ let count;
 let x;
 function build(){
     count=document.getElementById("count").value;
-    let house=document.getElementById("house");
+    let house=document.getElementById("tbody");
     if(count>0) {
         house.innerHTML = "<tr><td><div class='wrapper'><div class='button' onclick='rush(this);'>" + (count) + "</div></div></td><td rowspan='" + count + "'><div id='lift' class='lf'></div></td></tr>";
         let style = document.createElement('style');
