@@ -1,0 +1,70 @@
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0;
+  margin: 20px; }
+
+form {
+  width: 300px;
+  margin-bottom: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+  form > * {
+    margin-bottom: 10px; }
+  form button {
+    width: 120px; }
+
+#house {
+  border-collapse: collapse;
+  border: 2px solid #FF6450;
+  width: 600px; }
+  #house td {
+    padding: 0;
+    height: 200px;
+    border: 2px solid #FF6450; }
+    #house td .wrapper {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: end;
+      -ms-flex-pack: end;
+      justify-content: flex-end;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+  #house td:first-child {
+    padding-right: 30px;
+    width: 450px; }
+  #house .button {
+    cursor: pointer;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    font-weight: bold;
+    font-size: 25px;
+    border-radius: 50%;
+    background: #FFB5BD;
+    color: #FF6450;
+    border: 1px solid #FF6450; }
+
+#lift {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  border: 2px solid #000; }

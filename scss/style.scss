@@ -1,0 +1,68 @@
+$border-color: #FF6450;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  margin: 20px;
+}
+
+form {
+  width: 300px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  //border: 1px solid $border-color;
+  //color: #ff6450;
+  > * {
+    margin-bottom: 10px;
+  }
+
+  button {
+    width: 120px;
+  }
+}
+
+#house {
+  border-collapse: collapse;
+  border: 2px solid $border-color;
+  width: 600px;
+  td{
+    padding: 0;
+    height: 200px;
+    border: 2px solid $border-color;
+  .wrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  }
+  td:first-child {
+    padding-right: 30px;
+    width: 450px;
+  }
+  .button {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    font-weight: bold;
+    font-size: 25px;
+    border-radius: 50%;
+    background: #FFB5BD;
+    color: $border-color;
+    border: 1px solid $border-color;
+  }
+}
+
+#lift {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  border: 2px solid #000;
+}
