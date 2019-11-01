@@ -18,12 +18,9 @@ form {
   > * {
     margin-bottom: 10px;
   }
-  input {
-    max-width: 100px;
-  }
-
-  button {
-    width: 100px;
+  input,button {
+    max-width: 150px;
+    height: 30px;
   }
 }
 

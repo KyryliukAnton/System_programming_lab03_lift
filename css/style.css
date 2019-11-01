@@ -18,10 +18,9 @@ form {
   flex-direction: column; }
   form > * {
     margin-bottom: 10px; }
-  form input {
-    max-width: 100px; }
-  form button {
-    width: 100px; }
+  form input, form button {
+    max-width: 150px;
+    height: 30px; }
 
 #house {
   border-collapse: collapse;
