@@ -13,7 +13,7 @@ function build(){
         }
     }
  }
-
+//dfd
  function rush(this_) {
     if(x>new Date().getTime())
         return;
