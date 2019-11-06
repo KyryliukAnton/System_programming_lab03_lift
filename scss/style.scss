@@ -5,29 +5,30 @@ $border-color: #FF6450;
 }
 
 body {
-  margin: 0;
   padding: 0;
   margin: 20px;
 }
 
 form {
-  width: 300px;
+  width: 250px;
   margin-bottom: 30px;
   display: flex;
   flex-direction: column;
+
   > * {
     margin-bottom: 10px;
   }
-
-  button {
-    width: 120px;
+  input,button {
+    max-width: 150px;
+    height: 30px;
   }
 }
 
 #house {
   border-collapse: collapse;
   border: 2px solid $border-color;
-  width: 600px;
+  width: 400px;
+  margin-right: 50px;
   td{
     padding: 0;
     height: 200px;
@@ -40,22 +41,24 @@ form {
   }
   td:first-child {
     padding-right: 30px;
-    width: 450px;
+    width: 250px;
+    vertical-align: middle;
   }
-  .button {
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 50px;
-    font-weight: bold;
-    font-size: 25px;
-    border-radius: 50%;
-    background: #FFB5BD;
-    color: $border-color;
-    border: 1px solid $border-color;
-  }
+}
+
+.button {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  font-weight: bold;
+  font-size: 25px;
+  border-radius: 50%;
+  background: #FFB5BD;
+  color: $border-color;
+  border: 1px solid $border-color;
 }
 
 #lift {
@@ -64,3 +67,38 @@ form {
   height: 200px;
   border: 2px solid #000;
 }
+#tbody {
+  vertical-align: unset;
+}
+
+#panel {
+  padding: 0 20px 20px 0;
+  background: #FFB5BD;
+  max-width: 304px;
+  display: inline-flex;
+  flex-wrap: wrap;
+  .button {
+    margin: 20px 0 0 20px;
+  }
+}
+
+.wrapper-panel {
+  border: 2px solid $border-color;
+  max-width: 322px;
+  max-height: 440px;
+  overflow-y: auto;
+  position: fixed;
+  left: 470px;
+}
+  #wrapper-lift {
+    max-width: 772px;
+    display: none;
+    align-items: flex-start;
+  }
+  #info {
+    height: 70px;
+    width: 304px;
+    border-bottom: 2px solid $border-color;
+    position: fixed;
+    background: #FFB5BD;
+  }

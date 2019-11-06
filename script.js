@@ -2,8 +2,9 @@ let count;
 let x;
 function build(){
     count=document.getElementById("count").value;
-    let house=document.getElementById("house");
+    let house=document.getElementById("tbody");
     if(count>0) {
+        document.getElementById("wrapper-lift").style.display="flex";
         house.innerHTML = "<tr><td><div class='wrapper'><div class='button' onclick='rush(this);'>" + (count) + "</div></div></td><td rowspan='" + count + "'><div id='lift' class='lf'></div></td></tr>";
         let style = document.createElement('style');
         style.innerHTML = '.lf { top:'+((count-1)*200)+'px; }';
@@ -11,15 +12,28 @@ function build(){
         for (let i = 1; i < count; i++) {
             house.innerHTML += "<tr><td><div class='wrapper'><div class='button' onclick='rush(this);'>" + (count - i) + "</div></div></td></tr>";
         }
+        //Кнопки
+        let panel=document.getElementById("panel");
+        panel.innerHTML= "";
+        for (let i = 1; i <= count; i++) {
+            panel.innerHTML += "<div class='button' onclick='rush(this);'>" + (i) + "</div>";
+        }
+      //  alert("clientHeight "+panel.clientHeight+"\n clientHeight "+panel.clientHeight+"\nstyle.height "+panel.style.height);
     }
+    //let panel=document.getElementById("panel");
+    //if(panel.scrollHeight != panel.clientHeight)
+     //   panel.style.height= 304+'px';
  }
-//dfd
+
  function rush(this_) {
+     let panel=document.getElementById("panel");
+
     if(x>new Date().getTime())
         return;
     let time;
     let lift = document.getElementById("lift");
-     console.log(Math.abs(count-(parseInt(lift.style.top)/200)-this_.innerHTML));
+     console.log(lift.style.top);
+     //console.log(Math.abs(count-(parseInt(lift.style.top)/200) - this_.innerHTML));
      if(!lift.style.top) {
          time=this_.innerHTML-1;
      }
