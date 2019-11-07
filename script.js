@@ -1,5 +1,4 @@
-let count;
-let x;
+let count,x,timerId,k,n,p;
 function build(){
     count=document.getElementById("count").value;
     let house=document.getElementById("tbody");
@@ -18,30 +17,51 @@ function build(){
         for (let i = 1; i <= count; i++) {
             panel.innerHTML += "<div class='button' onclick='rush(this);'>" + (i) + "</div>";
         }
-      //  alert("clientHeight "+panel.clientHeight+"\n clientHeight "+panel.clientHeight+"\nstyle.height "+panel.style.height);
+        document.getElementById("tablo").innerHTML = "<div id='info-n'><i class='fas' id='symb'></i><span id='nomer'></span></div><span id='n'>1</span>/"+count;
     }
-    //let panel=document.getElementById("panel");
-    //if(panel.scrollHeight != panel.clientHeight)
-     //   panel.style.height= 304+'px';
  }
 
  function rush(this_) {
-     let panel=document.getElementById("panel");
+     let panel = document.getElementById("panel");
 
-    if(x>new Date().getTime())
-        return;
-    let time;
-    let lift = document.getElementById("lift");
-     console.log(lift.style.top);
-     //console.log(Math.abs(count-(parseInt(lift.style.top)/200) - this_.innerHTML));
-     if(!lift.style.top) {
-         time=this_.innerHTML-1;
+     if (x > new Date().getTime())
+         return;
+     let time;
+     let lift = document.getElementById("lift");
+     if (!lift.style.top) {
+         time = this_.innerHTML - 1;
+         p = 1;
+     } else {
+         time = Math.abs(count - (parseInt(lift.style.top) / 200) - this_.innerHTML);
+         p = count - (parseInt(lift.style.top) / 200);
      }
-     else {
-        time = Math.abs(count - (parseInt(lift.style.top) / 200) - this_.innerHTML);
-     }
-     lift.style.transition=time+"s linear";
-     x=new Date().getTime()+time*1000;
+     lift.style.transition = time + "s linear";
+     x = new Date().getTime() + time * 1000;
      lift.style.top = (count - this_.innerHTML) * 200 + "px";
+     n = this_.innerHTML;
+     if (n > p) {
+         k = 1;
+         document.getElementById('symb').classList.add("fa-angle-double-up");
+     } else if (n < p) {
+         document.getElementById('symb').classList.add("fa-angle-double-down");
+         k = -1;
+     }
+     if (n != p) {
+         document.getElementById('nomer').innerHTML = n;
+         timerId = setTimeout(Timeout, 1000);
+     }
  }
 
+ function Timeout() {
+     p+=k;
+     document.getElementById("n").innerHTML = p;
+
+     if(p==n){
+         document.getElementById('symb').classList.remove("fa-angle-double-up");
+         document.getElementById('symb').classList.remove("fa-angle-double-down");
+         document.getElementById('nomer').innerHTML='';
+         clearInterval(timerId);
+     }
+     else
+        timerId = setTimeout(Timeout, 1000);
+ }

@@ -1,4 +1,16 @@
+@charset "UTF-8";
+::-webkit-scrollbar {
+  /* chrome based */
+  width: 0px;
+  /* ширина scrollbar'a */
+  background: transparent;
+  /* опционально */ }
+
 * {
+  -ms-overflow-style: none;
+  /* IE 10+ */
+  scrollbar-width: none;
+  /* Firefox */
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
@@ -59,41 +71,59 @@ form {
   align-items: center;
   width: 50px;
   height: 50px;
+  color: #FF6450;
   font-weight: bold;
   font-size: 25px;
   border-radius: 50%;
   background: #FFB5BD;
-  color: #FF6450;
   border: 1px solid #FF6450; }
 
 #lift {
   position: relative;
   width: 100%;
   height: 200px;
-  border: 2px solid #000; }
+  border: 2px solid #000;
+  background: url("/1.jpg") no-repeat center;
+  background-size: cover; }
 
 #tbody {
   vertical-align: unset; }
 
-#panel {
-  padding: 0 20px 20px 0;
-  background: #FFB5BD;
-  max-width: 304px;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap; }
-  #panel .button {
-    margin: 20px 0 0 20px; }
-
 .wrapper-panel {
-  border: 2px solid #FF6450;
-  max-width: 322px;
-  max-height: 440px;
-  overflow-y: auto;
   position: fixed;
-  left: 470px; }
+  left: 488px;
+  max-width: 304px;
+  max-height: 466px;
+  border: 2px solid #FF6450;
+  background: #FFB5BD; }
+  .wrapper-panel #tablo {
+    color: #FF6450;
+    font-weight: bold;
+    font-size: 25px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 90px;
+    padding: 20px;
+    border-bottom: 2px solid #FF6450; }
+  .wrapper-panel #panel {
+    padding: 0 20px 20px 0;
+    max-width: 304px;
+    max-height: 370px;
+    overflow-y: auto;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+    .wrapper-panel #panel .button {
+      margin: 20px 0 0 20px; }
 
 #wrapper-lift {
   max-width: 772px;
@@ -108,3 +138,10 @@ form {
   border-bottom: 2px solid #FF6450;
   position: fixed;
   background: #FFB5BD; }
+
+#info-n {
+  position: absolute;
+  left: 20px;
+  top: 30px; }
+  #info-n #nomer {
+    margin: 0 10px; }

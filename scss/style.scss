@@ -1,6 +1,18 @@
 $border-color: #FF6450;
+@mixin text {
+  color: $border-color;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+::-webkit-scrollbar { /* chrome based */
+  width: 0px;  /* ширина scrollbar'a */
+  background: transparent;  /* опционально */
+}
 
 * {
+  -ms-overflow-style: none;  /* IE 10+ */
+  scrollbar-width: none; /* Firefox */
   box-sizing: border-box;
 }
 
@@ -53,11 +65,9 @@ form {
   align-items: center;
   width: 50px;
   height: 50px;
-  font-weight: bold;
-  font-size: 25px;
+  @include text;
   border-radius: 50%;
   background: #FFB5BD;
-  color: $border-color;
   border: 1px solid $border-color;
 }
 
@@ -66,39 +76,68 @@ form {
   width: 100%;
   height: 200px;
   border: 2px solid #000;
+  background: url("/1.jpg") no-repeat center;
+  background-size: cover;
+
 }
+
 #tbody {
   vertical-align: unset;
 }
 
-#panel {
-  padding: 0 20px 20px 0;
-  background: #FFB5BD;
+
+.wrapper-panel {
+  position: fixed;
+  left: 488px;
   max-width: 304px;
-  display: inline-flex;
-  flex-wrap: wrap;
-  .button {
-    margin: 20px 0 0 20px;
+  max-height: 466px;
+ // padding-bottom: 20px;
+  border: 2px solid $border-color;
+  background: #FFB5BD;
+
+  #tablo {
+    @include text;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90px;
+    padding: 20px;
+    border-bottom: 2px solid $border-color;
+  }
+
+  #panel {
+    padding: 0 20px 20px 0;
+    max-width: 304px;
+    max-height: 370px;
+    overflow-y: auto;
+    display: inline-flex;
+    flex-wrap: wrap;
+
+    .button {
+      margin: 20px 0 0 20px;
+    }
   }
 }
 
-.wrapper-panel {
-  border: 2px solid $border-color;
-  max-width: 322px;
-  max-height: 440px;
-  overflow-y: auto;
-  position: fixed;
-  left: 470px;
+#wrapper-lift {
+  max-width: 772px;
+  display: none;
+  align-items: flex-start;
 }
-  #wrapper-lift {
-    max-width: 772px;
-    display: none;
-    align-items: flex-start;
-  }
-  #info {
-    height: 70px;
-    width: 304px;
-    border-bottom: 2px solid $border-color;
-    position: fixed;
-    background: #FFB5BD;
-  }
+
+#info {
+  height: 70px;
+  width: 304px;
+  border-bottom: 2px solid $border-color;
+  position: fixed;
+  background: #FFB5BD;
+}
+
+#info-n {
+  position: absolute;
+  left: 20px;
+  top: 30px;
+ #nomer {
+   margin: 0 10px;
+ }
+}
